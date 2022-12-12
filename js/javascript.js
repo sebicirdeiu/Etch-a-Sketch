@@ -3,8 +3,24 @@ container.classList.add('container');
 const body = document.querySelector('body');
 body.appendChild(container);
 let color = "black";
+let mouseClick = false;
 
 createGrid(16);
+
+
+
+document.querySelector('.container').addEventListener('click', function(e){
+
+  let info = document.querySelector(".info");
+
+  if(mouseClick == false) {mouseClick = true;
+  info.innerHTML='Click once on the board to start drawing. Click again to stop!'}
+
+  else if (mouseClick == true) {mouseClick = false};
+  
+})
+
+
 
 
 
@@ -62,15 +78,22 @@ return choice }
 
 
 function colorDiv() {
+  if (mouseClick == true){
   if (color == 'random'){
     this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
   }
   else {this.style.backgroundColor = "black"}
-};
+}};
 
 function setColor(colorChoice){
 
        color = colorChoice;
+};
+
+
+function clearBoard (){
+  let divs = document.querySelectorAll('.row');
+  divs.forEach((div) => div.style.backgroundColor = "white");
 }
 
 
