@@ -5,7 +5,7 @@ body.appendChild(container);
 let color = "black";
 let mouseClick = false;
 
-createGrid(16);
+
 
 
 
@@ -109,14 +109,7 @@ function clearBoard (){
 
 
 
-//let rows = document.querySelectorAll('.row');
-
-
-//rows.forEach((row) => { 
- // row.addEventListener('mouseover', () => {
-   // row.setAttribute('style', 'background: black;')
-  ///});
-//}); 
+ 
 
 
 
